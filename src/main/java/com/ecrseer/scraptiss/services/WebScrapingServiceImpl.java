@@ -24,7 +24,7 @@ public class WebScrapingServiceImpl implements WebScrapingService {
 
 
 	@Override
-	public TabelaQuadro getQuadro30() {
+	public TabelaQuadro getQuadro(int numeroQuadro) {
 		String url="https://www.gov.br/ans/pt-br/assuntos/prestadores/padrao-para-troca-de-informacao-de-saude-suplementar-2013-tiss/padrao-tiss-2013-novembro-2021";
 		Document webPage = null;
 		try {
@@ -34,7 +34,7 @@ public class WebScrapingServiceImpl implements WebScrapingService {
 			Element btnBaixaPdf = colunaTabelaDesejada.parent().select("a").first();
 			String linkDoPdf = btnBaixaPdf.attr("href");
 
-			return tabelaDoPDF(linkDoPdf,"Quadro 30");
+			return tabelaDoPDF(linkDoPdf,"Quadro "+numeroQuadro);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -6,5 +6,5 @@ import com.ecrseer.scraptiss.entities.webscrap.TabelaQuadro;
 public interface WebScrapingService {
 
 
-	TabelaQuadro getQuadro30();
+	TabelaQuadro getQuadro(int numeroQuadro);
 }
