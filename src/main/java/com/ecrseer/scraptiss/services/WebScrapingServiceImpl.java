@@ -1,7 +1,6 @@
 package com.ecrseer.scraptiss.services;
 
 import com.ecrseer.scraptiss.entities.webscrap.TabelaQuadro;
-import com.ecrseer.scraptiss.repositories.WebScrapingService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;

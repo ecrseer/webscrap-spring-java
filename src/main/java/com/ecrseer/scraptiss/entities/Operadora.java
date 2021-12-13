@@ -14,6 +14,9 @@ public class Operadora {
     @OneToMany(mappedBy = "operadora")
     List<DemonstracaoContabil> demonstracoes;
 
+    public Operadora(){
+
+    }
     public Operadora(long idOperadora, String nomeFicticio,
                      List<DemonstracaoContabil> demonstracoes) {
         this.idOperadora = idOperadora;

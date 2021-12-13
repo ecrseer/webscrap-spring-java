@@ -1,4 +1,4 @@
-package com.ecrseer.scraptiss.repositories;
+package com.ecrseer.scraptiss.services;
 
 
 import com.ecrseer.scraptiss.entities.webscrap.TabelaQuadro;

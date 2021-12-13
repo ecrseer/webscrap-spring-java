@@ -1,7 +1,7 @@
 package com.ecrseer.scraptiss.controllers;
 
 import com.ecrseer.scraptiss.entities.webscrap.TabelaQuadro;
-import com.ecrseer.scraptiss.repositories.WebScrapingService;
+import com.ecrseer.scraptiss.services.WebScrapingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
