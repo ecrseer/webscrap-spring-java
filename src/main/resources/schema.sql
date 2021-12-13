@@ -17,3 +17,9 @@
             FOREIGN KEY (seller_id) REFERENCES tb_sellers(id)
         ) engine=InnoDB;
 
+CREATE TABLE IF NOT EXISTS  tb_operadoras (
+       id_operadora bigint not null auto_increment,
+       reg_ans bigint not null,
+        nome_ficticio varchar(255),
+        primary key (id_operadora)
+    ) engine=InnoDB;

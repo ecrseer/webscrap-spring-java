@@ -1,34 +1,40 @@
-package com.ecrseer.scraptiss.entities;
+package com.ecrseer.scraptiss.dto;
 
-import javax.persistence.*;
+import com.ecrseer.scraptiss.entities.DemonstracaoContabil;
+import com.ecrseer.scraptiss.entities.Operadora;
+
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "tb_demonstracoes")
-public class DemonstracaoContabil {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class DemonstracaoContabilDTO {
     private long idDemonstracao;
-
     private LocalDate data;
     private long cd_conta_contabil;
     private String descricao;
     private long vl_saldo_final;
 
-    @ManyToOne
-    @JoinColumn(name = "reg_ans")
-    private Operadora operadora;
+    private OperadoraDTO operadora;
 
-    public DemonstracaoContabil(long idDemonstracao, LocalDate data,
-                                long cd_conta_contabil, String descricao,
-                                long vl_saldo_final, Operadora operadora) {
+    public DemonstracaoContabilDTO(){
+
+    }
+
+    public DemonstracaoContabilDTO(long idDemonstracao, LocalDate data,
+                                   long cd_conta_contabil, String descricao,
+                                   long vl_saldo_final, OperadoraDTO operadora) {
         this.idDemonstracao = idDemonstracao;
         this.data = data;
         this.cd_conta_contabil = cd_conta_contabil;
         this.descricao = descricao;
         this.vl_saldo_final = vl_saldo_final;
         this.operadora = operadora;
+    }
+
+    public DemonstracaoContabilDTO(DemonstracaoContabil entidade){
+        this.idDemonstracao = entidade.getIdDemonstracao();
+        this.data=entidade.getData();
+        this.cd_conta_contabil=entidade.getCd_conta_contabil();
+        this.descricao=entidade.getDescricao();
+        this.operadora=new OperadoraDTO(entidade.getOperadora());
     }
 
     public long getIdDemonstracao() {
@@ -71,11 +77,11 @@ public class DemonstracaoContabil {
         this.vl_saldo_final = vl_saldo_final;
     }
 
-    public Operadora getOperadora() {
+    public OperadoraDTO getOperadora() {
         return operadora;
     }
 
-    public void setOperadora(Operadora operadora) {
+    public void setOperadora(OperadoraDTO operadora) {
         this.operadora = operadora;
     }
 }

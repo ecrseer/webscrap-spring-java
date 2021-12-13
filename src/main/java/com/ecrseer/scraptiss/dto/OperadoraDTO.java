@@ -11,17 +11,29 @@ public class OperadoraDTO implements Serializable {
     private long idOperadora;
     private String nomeFicticio;
 
+    private long regAns;
+
     public OperadoraDTO(){
 
     }
-    public OperadoraDTO(long idOperadora,String nomeFicticio){
+    public OperadoraDTO(long idOperadora,String nomeFicticio,long regAns){
         this.idOperadora=idOperadora;
         this.nomeFicticio=nomeFicticio;
+        this.regAns=regAns;
 
     }
     public OperadoraDTO(Operadora entity){
         this.idOperadora=entity.getIdOperadora();
         this.nomeFicticio=entity.getNomeFicticio();
+        this.regAns=entity.getRegAns();
+    }
+
+    public long getRegAns() {
+        return regAns;
+    }
+
+    public void setRegAns(long regAns) {
+        this.regAns = regAns;
     }
 
     public long getIdOperadora() {

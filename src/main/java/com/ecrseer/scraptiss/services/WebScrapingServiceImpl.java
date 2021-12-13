@@ -15,6 +15,8 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 
 @Service
@@ -26,7 +28,9 @@ public class WebScrapingServiceImpl implements WebScrapingService {
 	public TabelaQuadro getQuadro(int numeroQuadro) {
 		String url="https://www.gov.br/ans/pt-br/assuntos/prestadores/padrao-para-troca-de-informacao-de-saude-suplementar-2013-tiss/padrao-tiss-2013-novembro-2021";
 		Document webPage = null;
-		try {
+		try {/*
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate test = LocalDate.parse("01/01/2021",formatter);*/
 			webPage = Jsoup.connect(url).get();
 			Element colunaTabelaDesejada = webPage.select("td:contains(Componente Organizacional)").first();
 

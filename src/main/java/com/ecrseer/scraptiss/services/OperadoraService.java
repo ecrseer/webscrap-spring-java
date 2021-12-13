@@ -20,6 +20,7 @@ public class OperadoraService {
                 .map(operadora -> new OperadoraDTO(operadora))
                 .collect(Collectors.toList());
 
+
         return  operadoraDTOS;
     }
 

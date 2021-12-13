@@ -9,6 +9,7 @@ public class Operadora {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idOperadora;
+    private long regAns;
     private String nomeFicticio;
 
     @OneToMany(mappedBy = "operadora")
@@ -17,11 +18,20 @@ public class Operadora {
     public Operadora(){
 
     }
-    public Operadora(long idOperadora, String nomeFicticio,
+    public Operadora(long idOperadora, String nomeFicticio,long regAns,
                      List<DemonstracaoContabil> demonstracoes) {
         this.idOperadora = idOperadora;
         this.nomeFicticio = nomeFicticio;
+        this.regAns = regAns;
         this.demonstracoes = demonstracoes;
+    }
+
+    public long getRegAns() {
+        return regAns;
+    }
+
+    public void setRegAns(long regAns) {
+        this.regAns = regAns;
     }
 
     public long getIdOperadora() {
