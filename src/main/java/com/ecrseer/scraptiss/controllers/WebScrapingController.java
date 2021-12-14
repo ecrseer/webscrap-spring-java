@@ -21,7 +21,12 @@ public class WebScrapingController {
 
     @RequestMapping(value = "/quadro/{numeroQuadro}", method = RequestMethod.GET)
     public TabelaQuadro getQuadro(@PathVariable("numeroQuadro") int numeroQuadro) throws IOException{
-            return webScrapingService.getQuadro(numeroQuadro);
+        TabelaQuadro quadro = webScrapingService.getQuadro(numeroQuadro);
+        if(quadro!=null){
+                return quadro;
+            }else{
+            return new TabelaQuadro("gov br offline");
+        }
     }
 
 

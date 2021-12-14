@@ -31,24 +31,27 @@ public class TabelaQuadro {
     }
     public TabelaQuadro(String text){
         String[] linhas = text.split("\n");
+        if(linhas.length>2) {
         this.nome=linhas[0].split("Tabela de ")[1].trim();
 
         this.entidades = new ArrayList<EntidadeGenerica>();
 
-        IntStream.range(3, linhas.length).forEach(
-                index-> {
-                    int divisor = linhas[index].indexOf(" ");
 
-                    if(isLinhaValida(divisor,linhas[index])){
-                        int codigo = Integer.parseInt(linhas[index].substring(0, divisor));
-                        String descricao = linhas[index].substring(divisor).trim();
-                        entidades.add( new EntidadeGenerica(codigo, descricao) );
+
+            IntStream.range(3, linhas.length).forEach(
+                    index -> {
+                        int divisor = linhas[index].indexOf(" ");
+
+                        if (isLinhaValida(divisor, linhas[index])) {
+                            int codigo = Integer.parseInt(linhas[index].substring(0, divisor));
+                            String descricao = linhas[index].substring(divisor).trim();
+                            entidades.add(new EntidadeGenerica(codigo, descricao));
+                        }
                     }
-                }
 
-        ); 
+            );
 
-
+        }
     }
 
 }

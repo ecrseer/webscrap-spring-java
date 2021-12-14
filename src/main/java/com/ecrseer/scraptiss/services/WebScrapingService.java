@@ -7,4 +7,5 @@ public interface WebScrapingService {
 
 
 	TabelaQuadro getQuadro(int numeroQuadro);
+
 }
