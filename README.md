@@ -18,3 +18,6 @@ GET
 /scrap/quadro/{numeroDoQuadro}
 ```
 Onde `numeroDoQuadro` é o quadro que se deseja os dados.
+
+A api tambem se encontra no heroku
+https://ecrseer-webscrap-tiss.herokuapp.com/
